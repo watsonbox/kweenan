@@ -1,3 +1,8 @@
 Kweenan::Application.routes.draw do
-  root :to => 'high_voltage/pages#show', :id => 'front'
+  devise_for :users do
+    get "new_merchant", :to => "devise/registrations#new"
+    get "new_customer", :to => "devise/registrations#new"
+  end
+
+  root :to => 'pages#show', :id => 'front'
 end

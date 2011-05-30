@@ -1,0 +1,7 @@
+%ol
+  - if current_user.is_merchant?
+    %li.not_implemented= link_to 'My Profile', '#'
+  - else
+    %li.not_implemented= link_to 'Find Merchants', '#'
+    
+  %li= link_to 'My Account Settings', edit_user_registration_path

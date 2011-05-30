@@ -1,0 +1,9 @@
+- is_merchant = request.fullpath.include?('merchant')
+- title "#{is_merchant ? 'Merchant' : 'Customer'} Sign up"
+
+= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  = f.inputs :email, :password, :password_confirmation
+  = f.hidden_field :is_merchant, :value => is_merchant
+  = f.buttons do
+    = f.commit_button "Sign up", :button_html => { :class => :button }

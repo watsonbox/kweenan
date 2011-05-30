@@ -9,9 +9,10 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'devise'
 gem 'high_voltage'
+gem 'formtastic'
 
 group :development, :test do
-  gem "rspec-rails", "~> 2.4.0"
+  gem "rspec-rails", "~> 2.6.1"
   gem "ruby-debug19"
 end
 

@@ -33,10 +33,6 @@ input[type="submit"]::-moz-focus-inner { border: none; }
   fieldset {
     border: 0;
     padding: 0;
-    
-    &.buttons ol li {
-      margin: 0;
-    }
   }
   
   .inline-hints {
@@ -48,6 +44,10 @@ input[type="submit"]::-moz-focus-inner { border: none; }
   p.inline-errors {
     margin-top: 4px;
     color: #D12F19;
+  }
+  
+  abbr[title='required'] {
+    color: #f00;
   }
   
   input[type="color"],
@@ -83,5 +83,23 @@ input[type="submit"]::-moz-focus-inner { border: none; }
     padding: 5px;
     width: 440px;
     overflow: auto;
+  }
+  
+  .buttons {
+    li {
+      float: left;
+      margin: 0 10px 0 0;
+      
+      span.bottom {
+        display: inline-block;
+        height:16px;
+        line-height: 16px;
+        vertical-align: baseline;
+      }
+      
+      &.cancel {
+        font-size: 12px;
+      }
+    }
   }
 }
