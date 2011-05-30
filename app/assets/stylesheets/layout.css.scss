@@ -1,0 +1,161 @@
+@import 'rounded_corners.css.sass';
+@import 'colors.css.scss';
+
+a {
+  color: $purple;
+  text-decoration: none;
+
+  &:hover {
+    color: $purple;
+    text-decoration: underline;
+  }
+}
+
+body {
+  color: #444;
+  font-size: 13px;
+  font-family: "helvetica neue", arial, helvetica, "lucida grande", sans-serif;
+  background-color: #333;
+}
+
+h1 {
+  color: $gray;
+  margin-top: 24px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+p {
+  margin-top: 0;
+}
+
+#body {
+  @include round-corners;
+  margin: 20px auto;
+  width: 900px;
+  padding: 30px 30px 60px 30px;
+  background-color: $white;
+}
+
+header {
+  height: 100px;
+  nav {
+    float: right;
+  }
+  img {
+    float: left;
+  }
+  h1 {
+    float: right;
+    clear: right;
+    margin-bottom: 0;
+  }
+}
+
+aside {
+  float: left;
+  width: 180px;
+  text-align: right;
+  padding-right: 50px;
+  
+  ol {
+    list-style: none;
+  }
+  
+  li {
+    margin: 0 0 4px 0;
+    a {
+      color: $gray;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-shadow: 0px 1px 0px #e5e5ee;
+    }
+    
+    &.not_implemented {
+      a {
+        color: $silver;
+        pointer-events: none;
+               cursor: default;
+      }
+    }
+  }
+  
+  a:hover { text-decoration: none; }
+}
+
+footer {
+  text-align: center;
+  color: $gray;
+  
+  a {
+    color: $gray;
+  }
+}
+
+#content {
+  font-size: 16px;
+  border-left: 1px solid #ccc;
+  margin: 0 0 0 230px;
+  padding: 0 0 0 50px;
+}
+
+#photos {
+  float: right;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #D8DEE2;
+  background: url(../images/photo_camera.png) no-repeat center center;
+}
+
+/* Success, error & notice boxes for messages and errors. */
+div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #flash_notice, #flash_alert, #error_explanation {
+  @include round-corners;
+  border: solid 2px #C2E7FF;
+  background: #DFF4FF;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+div.error, #flash_failure, #error_explanation {
+  border: solid 2px #FBC2C4;
+  background: #ffeeee;
+}
+
+div.error a, #flash_failure a {}
+div.notice, div.alert, #flash_notice, #flash_alert {}
+div.notice a, #flash_notice a {}
+div.success, #flash_success {}
+div.success a, #flash_success a {}
+  
+/* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix {
+  zoom: 1;
+}

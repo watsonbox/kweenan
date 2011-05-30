@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %meta{ :charset => "utf-8" }
+    %title= yield(:title) || 'Untitled'
+    = yield :head
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tag
+
+  %body
+    #body
+      %header
+        %nav
+          [nav menu]
+        = link_to image_tag('logo.png'), root_path
+        %h1= yield(:title) if show_title?
+
+      %aside
+        = render 'shared/menu'
+
+      #content
+        #flash
+          - flash.each do |key, value|
+            %div{:id => "flash_#{key}"}= value
+        = yield
+        .clearfix
+      
+    %footer= render 'shared/footer'

@@ -1,0 +1,87 @@
+/* Removes dotted outline on submit buttons when clicking in firefox */
+input[type="submit"]::-moz-focus-inner { border: none; }
+
+#content form {
+  label {
+    display: block;
+    margin-bottom: 4px;
+    
+    a {
+      font-size: 13px;
+    }
+  }
+  
+  ol {
+    list-style: none;
+    margin: 0;
+    ol {
+      margin: 0;
+      list-style-position: outside;
+      li { margin: 0 0 .25em 0; }
+    }
+    
+    li {
+      list-style-position: outside;
+      margin: 0 0 24px 0;
+    
+      &.error input {
+        background: #ffeeee;
+      }
+    }
+  }
+  
+  fieldset {
+    border: 0;
+    padding: 0;
+    
+    &.buttons ol li {
+      margin: 0;
+    }
+  }
+  
+  .inline-hints {
+    color: #666;
+    font-size: 0.8em;
+    margin: 4px 0;
+  }
+  
+  p.inline-errors {
+    margin-top: 4px;
+    color: #D12F19;
+  }
+  
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="range"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"] {
+    padding: 5px;
+    border: 1px solid #D8DEE2;
+    width: 300px;
+    font-size: inherit;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  
+  textarea {
+    border: 1px solid #D8DEE2;
+    font-size: inherit;
+    height: 200px;
+    padding: 5px;
+    width: 440px;
+    overflow: auto;
+  }
+}
