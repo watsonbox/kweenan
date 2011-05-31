@@ -132,13 +132,13 @@ div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #
   padding: 10px;
 }
 
-div.error, #flash_failure, #error_explanation {
+div.error, div.alert, #flash_failure, #flash_alert, #error_explanation {
   border: solid 2px #FBC2C4;
   background: #ffeeee;
 }
 
 div.error a, #flash_failure a {}
-div.notice, div.alert, #flash_notice, #flash_alert {}
+div.notice, #flash_notice {}
 div.notice a, #flash_notice a {}
 div.success, #flash_success {}
 div.success a, #flash_success a {}

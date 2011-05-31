@@ -85,6 +85,24 @@ input[type="submit"]::-moz-focus-inner { border: none; }
     overflow: auto;
   }
   
+  legend {
+    padding: 0;
+  }
+  
+  .inputs {
+    li.date {
+      li {
+        margin: 10px 10px 0 0;
+        float: left;
+        label {
+          font-size: 12px;
+          display: inline;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  
   .buttons {
     li {
       float: left;

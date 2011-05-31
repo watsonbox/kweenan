@@ -3,9 +3,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :is_merchant, :merchant_id
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :merchant_id, :type
   
-  def is_merchant?
-    is_merchant
-  end
+  has_one :profile, :class_name => 'UserProfile'
 end

@@ -2,14 +2,14 @@
 
 = semantic_form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|
   = f.inputs do
-    = f.input :email
+    = f.input :email, :input_html => { :tabindex => 1, :autofocus => true }
     %li{:id => 'merchant_password_input'}
       = f.label(:password, ("Password<abbr title='required'>*</abbr> " + link_to("(forgot password)", new_password_path(resource_name))).html_safe)
-      = f.password_field :password
-    = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+      = f.password_field :password, :tabindex => 2
+    = f.input :remember_me, :as => :boolean, :input_html => { :tabindex => 3 } if devise_mapping.rememberable?
 
   = f.buttons do
-    = f.commit_button 'Sign in', :button_html => { :class => [:big, :button] }
+    = f.commit_button 'Sign in', :button_html => { :class => [:big, :button], :tabindex => 4 }
 
   %br
   %br

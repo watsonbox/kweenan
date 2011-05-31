@@ -3,7 +3,10 @@
 
 = semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = devise_error_messages!
-  = f.inputs :email, :password, :password_confirmation
-  = f.hidden_field :is_merchant, :value => is_merchant
+  = f.inputs do
+    = f.input :email, :input_html => { :tabindex => 1, :autofocus => true }
+    = f.input :password, :input_html => { :tabindex => 2 }
+    = f.input :password_confirmation, :input_html => { :tabindex => 3 }
+  = f.hidden_field :type, :value => is_merchant ? 'MerchantUser' : 'Customer'
   = f.buttons do
-    = f.commit_button "Sign up", :button_html => { :class => :button }
+    = f.commit_button "Sign up", :button_html => { :class => :button, :tabindex => 4 }

@@ -1,0 +1,11 @@
+= semantic_form_for profile, :url => user_profile_path do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :gender, :as => :select, :collection => { 'Male' => 'M', 'Female' => 'F' }
+    = f.input :date_of_birth
+    = f.input :address
+    = f.input :city
+    = f.input :postcode
+  
+  = f.buttons do
+    = f.commit_button 'Save', :button_html => { :class => :button }

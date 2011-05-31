@@ -1,9 +1,10 @@
 class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
-      t.string :name
+      t.string :type, :null => false
       t.integer :merchant_id
-      t.boolean :is_merchant, :null => false, :default => false
+      
+      # Devise columns
       t.database_authenticatable :null => false
       t.recoverable
       t.rememberable
