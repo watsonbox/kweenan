@@ -4,6 +4,16 @@ class ApplicationController < ActionController::Base
   
   protected
   
+  def after_sign_in_path_for(resource_or_scope)
+    if resource_or_scope.kind_of?(MerchantUser)
+      edit_user_registration_path
+    elsif resource_or_scope.kind_of?(Customer)
+      edit_user_registration_path
+    else
+      super
+    end
+  end
+  
   def require_customer
     redirect_to root_path unless current_user.kind_of?(Customer)
   end

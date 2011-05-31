@@ -6,11 +6,7 @@ class PagesController < HighVoltage::PagesController
   
   def logged_out_for_front_page
     if params[:id] == 'front' && user_signed_in?
-      if current_user.kind_of?(MerchantUser)
-        redirect_to edit_user_registration_path # Normally my profile
-      else
-        redirect_to edit_user_registration_path # Normally find merchants
-      end
+      redirect_to after_sign_in_path_for(current_user)
     end
   end
 end

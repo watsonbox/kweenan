@@ -5,6 +5,7 @@ Kweenan::Application.routes.draw do
   end
   
   resource :user_profile, :except => :show
+  resources :pages
 
   root :to => 'pages#show', :id => 'front'
 end
