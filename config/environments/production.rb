@@ -51,4 +51,6 @@ Kweenan::Application.configure do
   config.active_support.deprecation = :notify
   
   config.action_mailer.default_url_options = { :host => 'kweenan.heroku.com' }
+  config.action_mailer.delivery_method   = :postmark
+  config.action_mailer.postmark_settings = { :api_key => "1e78e1ec-81fd-4219-8914-404c873c3cbe" } # My own Postmark account
 end

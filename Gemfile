@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'high_voltage'
 gem 'formtastic'
+gem 'postmark-rails'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.6.1"
