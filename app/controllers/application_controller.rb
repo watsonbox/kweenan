@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :authenticate_user!, :require_user_data
+  before_filter :production_password, :authenticate_user!, :require_user_data
   
   protected
   
@@ -26,6 +26,14 @@ class ApplicationController < ActionController::Base
     if signed_in?
       if current_user.kind_of?(Customer) && current_user.profile.blank?
         redirect_to new_user_profile_path
+      end
+    end
+  end
+  
+  def production_password
+    if Rails.env == 'production'
+      authenticate_or_request_with_http_basic do |username, password|
+        username == PRODUCTION_USER && password == PRODUCTION_PASSWORD
       end
     end
   end
