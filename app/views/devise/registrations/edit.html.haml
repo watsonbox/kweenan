@@ -8,12 +8,7 @@
     = f.input :password_confirmation
     = f.input :current_password, :hint => '(we need your current password to confirm your changes)'
     = f.buttons do
-      %li.commit
-        = f.submit "Update", :class => [:update, :button]
-      %li.cancel
-        %span.bottom
-        or
-        = link_to "Cancel", :back
+      = f.commit_button "Update", :button_html => { :class => [:update, :button] }
 
 %br
 %br
