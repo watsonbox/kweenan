@@ -52,5 +52,5 @@ Kweenan::Application.configure do
   
   config.action_mailer.default_url_options = { :host => 'kweenan.heroku.com' }
   config.action_mailer.delivery_method   = :postmark
-  config.action_mailer.postmark_settings = { :api_key => "1e78e1ec-81fd-4219-8914-404c873c3cbe" } # My own Postmark account
+  config.action_mailer.postmark_settings = { :api_key => "9d759d53-2e6d-40c4-bd6c-ce8fe8e4818c" }
 end
