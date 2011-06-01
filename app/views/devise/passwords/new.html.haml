@@ -1,12 +1,12 @@
-- title 'Forgot your password?'
+- title t('.title')
 
 = semantic_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
-  = devise_error_messages!
+  = error_messages_for resource, :header_message => false
   = f.inputs :email
   = f.buttons do
     %li.commit
-      = f.submit "Send me reset password instructions", :class => [:update, :button]
+      = f.submit t('.send_reset_password_instructions'), :class => [:update, :button]
     %li.cancel
       %span.bottom
-      or
-      = link_to "Go Back", :back
+      = t('or')
+      = link_to t('go_back').capitalize, :back

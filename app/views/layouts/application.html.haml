@@ -13,13 +13,10 @@
       %header
         %nav
           - if user_signed_in?
-            - if current_user.kind_of?(MerchantUser)
-              You are logged in as merchant #{current_user.email}
-            - else current_user.kind_of?(Customer)
-              You are logged in as customer #{current_user.email}
-            = link_to "(Sign out)", destroy_user_session_path, :id => 'sign_out'
+            = t('devise.sessions.signed_in_as', :user => current_user.email)
+            = link_to "(#{t('devise.shared.sign_out')})", destroy_user_session_path, :id => 'sign_out'
           - else
-            You are not logged in
+            = t('devise.sessions.signed_out')
             
         = link_to image_tag('logo.png'), root_path
         %h1= yield(:title) if show_title?

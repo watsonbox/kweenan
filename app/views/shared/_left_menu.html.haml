@@ -1,8 +1,8 @@
 %ol
   - if current_user.kind_of?(MerchantUser)
-    %li.not_implemented= link_to 'My Merchant Profile', '#'
+    %li.not_implemented= link_to t('.my_merchant_profile'), '#'
   - else
-    %li.not_implemented= link_to 'Find Merchants', '#'
-    %li= link_to 'My Profile', edit_user_profile_path
+    %li.not_implemented= link_to t('.find_merchants'), '#'
+    %li= link_to t('.my_profile'), edit_user_profile_path
     
-  %li= link_to 'My Account Settings', edit_user_registration_path
+  %li= link_to t('.my_account'), edit_user_registration_path

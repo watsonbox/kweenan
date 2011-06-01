@@ -1,11 +1,12 @@
 = semantic_form_for profile, :url => user_profile_path do |f|
+  = error_messages_for profile, :header_message => false
   = f.inputs do
     = f.input :name
-    = f.input :gender, :as => :select, :collection => { 'Male' => 'M', 'Female' => 'F' }
+    = f.input :gender, :as => :select, :collection => { t('male') => 'M', t('female') => 'F' }
     = f.input :date_of_birth
     = f.input :address
     = f.input :city
     = f.input :postcode
   
   = f.buttons do
-    = f.commit_button 'Save', :button_html => { :class => :button }
+    = f.commit_button t('.save'), :button_html => { :class => :button }

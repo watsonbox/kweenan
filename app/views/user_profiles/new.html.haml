@@ -1,5 +1,5 @@
-- title 'Tell us about Yourself'
+- title t('.title')
 
-%p Please tell us a little more about yourself and get started using Kweenan right away!
+%p= t('.intro')
 
 = render 'form', :profile => @user_profile

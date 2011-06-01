@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
   
   def require_user_data
-    if signed_in?
+    if signed_in? && request.fullpath != destroy_user_session_path
       if current_user.kind_of?(Customer) && current_user.profile.blank?
         redirect_to new_user_profile_path
       end

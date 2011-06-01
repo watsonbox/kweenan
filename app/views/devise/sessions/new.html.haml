@@ -1,16 +1,16 @@
-- title 'Sign in'
+- title t('.title')
 
 = semantic_form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|
   = f.inputs do
     = f.input :email, :input_html => { :tabindex => 1, :autofocus => true }
     %li{:id => 'merchant_password_input'}
-      = f.label(:password, ("Password<abbr title='required'>*</abbr> " + link_to("(forgot password)", new_password_path(resource_name))).html_safe)
+      = f.label(:password, ("#{t('attributes.password')}<abbr title='required'>*</abbr> " + link_to(t('.forgot_password'), new_password_path(resource_name))).html_safe)
       = f.password_field :password, :tabindex => 2
     = f.input :remember_me, :as => :boolean, :input_html => { :tabindex => 3 } if devise_mapping.rememberable?
 
   = f.buttons do
-    = f.commit_button 'Sign in', :button_html => { :class => [:big, :button], :tabindex => 4 }
+    = f.commit_button t('.sign_in'), :button_html => { :class => [:big, :button], :tabindex => 4 }
 
   %br
   %br
-  = link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)
+  = link_to t('.didnt_receive_confirmation_instructions?'), new_confirmation_path(resource_name)

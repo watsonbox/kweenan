@@ -11,9 +11,8 @@ class UserProfilesController < ApplicationController
     @user_profile = current_user.build_profile(params[:user_profile])
     
     if @user_profile.save
-      redirect_to edit_user_profile_path, :notice => 'Your profile was successfully saved'
+      redirect_to edit_user_profile_path, :notice => t('user_profiles.saved')
     else
-      flash.now[:alert] = 'There were some problems saving your profile'
       render :action => 'new'
     end
   end
@@ -26,9 +25,8 @@ class UserProfilesController < ApplicationController
     @user_profile = current_user.profile
     
     if @user_profile.update_attributes(params[:user_profile])
-      redirect_to edit_user_profile_path, :notice => 'Your profile was successfully saved'
+      redirect_to edit_user_profile_path, :notice => t('user_profiles.saved')
     else
-      flash.now[:alert] = 'There were some problems saving your profile'
       render :action => 'edit'
     end
   end

@@ -1,7 +1,7 @@
-- title 'Resend confirmation instructions'
+- title t('.title')
 
 = semantic_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
-  = devise_error_messages!
+  = error_messages_for resource, :header_message => false
   = f.inputs :email
   = f.buttons do
-    = f.commit_button "Resend confirmation instructions", :button_html => { :class => :button }
+    = f.commit_button t('.resend_instructions'), :button_html => { :class => :button }

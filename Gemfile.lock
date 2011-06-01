@@ -47,6 +47,7 @@ GEM
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
     diff-lcs (1.1.2)
+    dynamic_form (1.1.4)
     erubis (2.7.0)
     execjs (1.0.0)
       multi_json (~> 1.0)
@@ -160,6 +161,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-script
   devise
+  dynamic_form
   formtastic
   haml
   heroku

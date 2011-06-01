@@ -1,6 +1,6 @@
 class UserProfile < ActiveRecord::Base
-  validates_presence_of :name, :gender, :address, :city, :postcode
-  validates_inclusion_of :gender, :in => %w(M F)
+  validates_presence_of :name, :address, :city, :postcode
+  validate :gender, :presence => true, :in => %w(M F)
   
   belongs_to :user
 end

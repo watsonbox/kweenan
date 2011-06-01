@@ -68,9 +68,9 @@ header {
 
 aside {
   float: left;
-  width: 180px;
+  width: 200px;
   text-align: right;
-  padding-right: 50px;
+  padding-right: 30px;
   
   ol {
     list-style: none;
@@ -132,7 +132,7 @@ footer {
 }
 
 /* Success, error & notice boxes for messages and errors. */
-div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #flash_notice, #flash_alert, #error_explanation {
+div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #flash_notice, #flash_alert, #error_explanation, #errorExplanation {
   @include round-corners;
   border: solid 2px #C2E7FF;
   background: #DFF4FF;
@@ -140,7 +140,7 @@ div.error, div.notice, div.success, div.alert, #flash_failure, #flash_success, #
   padding: 10px;
 }
 
-div.error, div.alert, #flash_failure, #flash_alert, #error_explanation {
+div.error, div.alert, #flash_failure, #flash_alert, #error_explanation, #errorExplanation {
   border: solid 2px #FBC2C4;
   background: #ffeeee;
 }
@@ -150,6 +150,10 @@ div.notice, #flash_notice {}
 div.notice a, #flash_notice a {}
 div.success, #flash_success {}
 div.success a, #flash_success a {}
+
+.translation_missing {
+  color: #f00 !important;
+}
   
 /* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */
 .clearfix:before,

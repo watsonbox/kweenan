@@ -12,6 +12,7 @@ gem 'devise'
 gem 'high_voltage'
 gem 'formtastic'
 gem 'postmark-rails'
+gem 'dynamic_form'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.6.1"
