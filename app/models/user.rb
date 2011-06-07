@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :merchant_id, :type
   
   has_one :profile, :class_name => 'UserProfile'
+  has_one :merchant
 end

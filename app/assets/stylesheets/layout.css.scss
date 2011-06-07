@@ -1,6 +1,5 @@
 @import 'rounded_corners.css.sass';
 @import 'colors.css.scss';
-@import 'gh_buttons.css.scss';
 
 a {
   color: $purple;
@@ -26,6 +25,11 @@ h1 {
 
 h2 {
   font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+h3 {
+  font-size: 16px;
   margin: 0 0 10px 0;
 }
 
@@ -121,14 +125,6 @@ footer {
   border-left: 1px solid #ccc;
   margin: 0 0 0 230px;
   padding: 0 0 0 50px;
-}
-
-#photos {
-  float: right;
-  width: 200px;
-  height: 200px;
-  border: 1px solid #D8DEE2;
-  background: url(../images/photo_camera.png) no-repeat center center;
 }
 
 /* Success, error & notice boxes for messages and errors. */

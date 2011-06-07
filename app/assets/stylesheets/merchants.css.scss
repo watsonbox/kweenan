@@ -1,0 +1,30 @@
+#photos {
+  float: right;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #D8DEE2;
+  background: url(../images/photo_camera.png) no-repeat center center;
+}
+
+#merchant_top_inputs {
+  width: 400px;
+}
+
+ol.merchants {
+  list-style-position: inside;
+  
+  li {
+    width: 400px;
+    margin: 0 0 20px 0;
+    
+    .distance {
+      display: inline-block;
+      min-width: 60px;
+      font-style: italic;
+    }
+    
+    .address {
+      display: inline;
+    }
+  }
+}

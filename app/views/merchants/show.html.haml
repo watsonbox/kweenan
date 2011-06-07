@@ -1,0 +1,34 @@
+- title @merchant.name
+
+#photos
+
+%h3= t('attributes.address') + ':'
+%p= @merchant.full_address
+
+- if @merchant.email.present?
+  %h3= t('attributes.email') + ':'
+  %p= @merchant.email
+
+- if @merchant.phone.present?
+  %h3= t('attributes.phone') + ':'
+  %p= @merchant.phone
+
+- if @merchant.hours.present?
+  %h3= t('attributes.hours') + ':'
+  %p= @merchant.hours
+
+- if @merchant.description.present?
+  %h3= t('activerecord.attributes.merchant.description') + ':'
+  %p= @merchant.description
+
+%h2= t('.notices')
+%p [not yet implemented]
+
+%h2= t('.offers')
+%p [not yet implemented]
+
+%br
+- if this_is_my_merchant_profile
+  %p= link_to t('.modify'), edit_merchant_profile_path
+- else
+  %p= link_to '<< ' + t('.back').capitalize, :back

@@ -68,6 +68,8 @@ GEM
     jquery-rails (1.0.9)
       railties (~> 3.0)
       thor (~> 0.14)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
     launchy (0.4.0)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -172,6 +174,7 @@ DEPENDENCIES
   heroku
   high_voltage
   jquery-rails
+  kaminari
   mongrel (= 1.2.0.pre2)
   mysql
   pg

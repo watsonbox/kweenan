@@ -1,0 +1,12 @@
+- title t('.title')
+
+=# gmaps4rails(@merchants.to_gmaps4rails)
+
+- if @merchants.present?
+  %ol.merchants
+    - @merchants.each do |m|
+      = render 'merchant_list_item', :merchant => m
+- else
+  = t('.no_merchants_found')
+
+= paginate @merchants

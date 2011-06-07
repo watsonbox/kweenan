@@ -1,0 +1,5 @@
+%li
+  %h3= link_to merchant.name, merchant
+  - if merchant.respond_to?(:distance)
+    .distance= merchant.distance.to_f.round(2).to_s + 'km'
+  .address= merchant.full_address

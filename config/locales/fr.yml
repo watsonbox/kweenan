@@ -1,11 +1,12 @@
 fr:
+  modify: "Modifier"
   confirm: "Etes vous sur?"
   save: 'Sauvegarder'
   update: 'Modifier'
   male: 'Male'
   female: 'Female'
   or: 'ou'
-  go_back: 'revenir'
+  back: 'revenir'
   
   shared:
     left_menu:
@@ -30,6 +31,20 @@ fr:
     edit:
       title: 'Mon Profil'
   
+  merchants:
+    saved: "Votre profil commerçant a été sauvegardé avec succès"
+    form:
+      name_description: 'Le nom de votre enterprise'
+    index:
+      title: 'Des Commerçants Proche de Moi'
+    show:
+      notices: 'Notices'
+      offers: 'Offers'
+    new:
+      title: 'Your Business Details'
+    edit:
+      title: 'Modifier mon Profil Commerçant'
+  
   pages:
     front:
       title: "Bienvenue à Kweenan"
@@ -39,6 +54,22 @@ fr:
       title: "Déclaration de Confidentialité"
     terms:
       title: "Conditions d'utilisation"
+  
+  attributes:
+    email: "Adresse électronique"
+    phone: "Téléphone"
+    password: "Mot de passe"
+    password_confirmation: "Confirmation de mot de passe"
+    current_password: "Mot de passe actuel"
+    name: "Nom"
+    gender: "Sexe"
+    date_of_birth: "Date de naissance"
+    address: "Adresse"
+    city: "Ville"
+    postcode: "Code Postal"
+    hours: "Heures d'ouverture"
+    created_at: "Créé le"
+    updated_at: "Modifié le"
   
   date:
     formats:
@@ -172,20 +203,6 @@ fr:
       update: "Modifier ce %{model}"
       submit: "Enregistrer ce %{model}"
 
-  attributes:
-    email: "Adresse électronique"
-    password: "Mot de passe"
-    password_confirmation: "Confirmation de mot de passe"
-    current_password: "Mot de passe actuel"
-    name: "Nom"
-    gender: "Sexe"
-    date_of_birth: "Date de naissance"
-    address: "Adresse"
-    city: "Ville"
-    postcode: "Code Postal"
-    created_at: "Créé le"
-    updated_at: "Modifié le"
-
   errors:
     format: "%{attribute} %{message}"
     messages: &errors_messages
@@ -224,6 +241,9 @@ fr:
         <<: *errors_template
       full_messages:
         format: "%{attribute} %{message}"
+    attributes:
+      merchant:
+        description: "Description d'enterprise"
         
     models:
       merchant_user: "Commerçant"

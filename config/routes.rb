@@ -4,8 +4,11 @@ Kweenan::Application.routes.draw do
     get "new_customer", :to => "devise/registrations#new"
   end
   
-  resource :user_profile, :except => :show
+  resources :merchants, :except => [:new, :create, :edit, :update]
   resources :pages
+  
+  resource :merchant_profile, :controller => 'merchants'
+  resource :user_profile, :except => :show
 
   root :to => 'pages#show', :id => 'front'
 end
