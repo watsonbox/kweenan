@@ -20,7 +20,8 @@ class MerchantsController < ApplicationController
   end
   
   def create
-    @merchant = current_user.build_merchant(params[:merchant])
+    @merchant = current_user.merchant || current_user.build_merchant
+    @merchant.attributes = params[:merchant]
     
     if @merchant.save
       flash[:notice] = t('merchants.saved')
