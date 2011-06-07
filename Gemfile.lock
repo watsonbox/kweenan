@@ -84,7 +84,7 @@ GEM
       daemons (~> 1.0.10)
       gem_plugin (~> 0.2.3)
     multi_json (1.0.3)
-    mysql (2.8.1)
+    mysql2 (0.3.2)
     orm_adapter (0.0.5)
     pg (0.11.0)
     polyglot (0.3.1)
@@ -176,7 +176,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mongrel (= 1.2.0.pre2)
-  mysql
+  mysql2
   pg
   postmark-rails
   rails (= 3.1.0.rc1)

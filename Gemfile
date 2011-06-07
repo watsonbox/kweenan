@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem "rake", "0.8.7"
 gem 'rails', '3.1.0.rc1'
-gem 'mysql'
+gem 'mysql2'
 gem 'sass'
 gem 'haml'
 gem 'coffee-script'
