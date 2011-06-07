@@ -3,7 +3,7 @@
   = f.inputs do
     = f.input :name
     = f.input :gender, :as => :select, :collection => { t('male') => 'M', t('female') => 'F' }
-    = f.input :date_of_birth
+    = f.input :date_of_birth, :start_year => Date.today.year, :end_year => Date.today.year - 100
     = f.input :address
     = f.input :city
     = f.input :postcode
