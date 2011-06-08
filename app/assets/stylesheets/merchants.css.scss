@@ -28,3 +28,19 @@ ol.merchants {
     }
   }
 }
+
+#content form ul.token-input-list-facebook {
+  border: 1px solid #D8DEE2;
+  padding: 5px;
+  width: 440px;
+
+  li.token-input-token-facebook {
+    margin: 0 6px 6px 0;
+  }
+  
+  input[type="text"] {
+    padding: 0;
+    border: 0;
+    margin: 0;
+  }
+}

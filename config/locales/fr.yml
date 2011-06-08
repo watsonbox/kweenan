@@ -24,6 +24,7 @@ fr:
       terms_of_use: "Conditions d'utilisation"
   
   user_profiles:
+    data_required: 'Please provide your details first'
     saved: "Votre profil a été sauvegardé avec succès"
     new:
       title: "Tell us about Yourself"
@@ -32,9 +33,11 @@ fr:
       title: 'Mon Profil'
   
   merchants:
+    data_required: 'Please provide your business details first'
     saved: "Votre profil commerçant a été sauvegardé avec succès"
     form:
       name_description: 'Le nom de votre enterprise'
+      brands_hint: 'Enter the brands which you currently carry'
     index:
       title: 'Des Commerçants Proche de Moi'
     show:
@@ -69,6 +72,7 @@ fr:
     postcode: "Code Postal"
     hours: "Heures d'ouverture"
     business_category: "Business Category"
+    brands: "Marques"
     created_at: "Créé le"
     updated_at: "Modifié le"
   

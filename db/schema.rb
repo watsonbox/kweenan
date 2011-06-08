@@ -10,10 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110608083857) do
+ActiveRecord::Schema.define(:version => 20110608091038) do
+
+  create_table "brands", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "business_categories", :force => true do |t|
     t.string   "name",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "carryings", :force => true do |t|
+    t.integer  "merchant_id", :null => false
+    t.integer  "brand_id",    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,7 +42,6 @@ ActiveRecord::Schema.define(:version => 20110608083857) do
     t.text     "description"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "business_category_id", :null => false

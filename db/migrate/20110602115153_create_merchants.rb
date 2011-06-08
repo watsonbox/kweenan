@@ -11,7 +11,6 @@ class CreateMerchants < ActiveRecord::Migration
       t.text :description
       t.float :latitude
       t.float :longitude
-      t.references :user
 
       t.timestamps
     end

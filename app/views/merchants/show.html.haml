@@ -16,6 +16,10 @@
   %h3= t('attributes.phone') + ':'
   %p= @merchant.phone
 
+- if @merchant.brands.present?
+  %h3= t('attributes.brands') + ':'
+  %p= @merchant.brands.map(&:name).join(', ')
+
 - if @merchant.hours.present?
   %h3= t('attributes.hours') + ':'
   %p= @merchant.hours

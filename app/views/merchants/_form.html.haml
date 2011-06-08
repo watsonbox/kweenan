@@ -12,6 +12,7 @@
     = f.input :email
     = f.input :phone
     = f.input :hours
+    = f.input :brand_tokens, :label => t('attributes.brands'), :hint => t('.brands_hint'), :as => :string, :input_html => { "data-pre" => @merchant.brands.map(&:attributes).to_json }
     = f.input :description
   = f.buttons do
     = f.commit_button t('.save'), :button_html => { :class => :button }

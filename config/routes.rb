@@ -6,6 +6,7 @@ Kweenan::Application.routes.draw do
   
   resources :merchants, :except => [:new, :create, :edit, :update]
   resources :pages
+  resources :brands, :only => :index
   
   resource :merchant_profile, :controller => 'merchants'
   resource :user_profile, :except => :show

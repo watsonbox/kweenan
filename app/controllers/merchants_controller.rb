@@ -20,10 +20,11 @@ class MerchantsController < ApplicationController
   end
   
   def create
-    @merchant = current_user.merchant || current_user.build_merchant
+    @merchant = current_user.merchant || Merchant.new
     @merchant.attributes = params[:merchant]
     
     if @merchant.save
+      current_user.update_attributes(:merchant => @merchant)
       flash[:notice] = t('merchants.saved')
       redirect_to merchant_profile_path
     else
