@@ -76,6 +76,13 @@ input[type="submit"]::-moz-focus-inner { border: none; }
     vertical-align: middle;
   }
   
+  select {
+    padding: 5px;
+    border: 1px solid #D8DEE2;
+    width: 310px;
+    font-size: inherit;
+  }
+  
   textarea {
     border: 1px solid #D8DEE2;
     font-size: inherit;

@@ -68,6 +68,7 @@ fr:
     city: "Ville"
     postcode: "Code Postal"
     hours: "Heures d'ouverture"
+    business_category: "Business Category"
     created_at: "Créé le"
     updated_at: "Modifié le"
   

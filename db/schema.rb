@@ -10,13 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110602115153) do
+ActiveRecord::Schema.define(:version => 20110608083857) do
+
+  create_table "business_categories", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "merchants", :force => true do |t|
-    t.string   "name",        :null => false
-    t.string   "address",     :null => false
-    t.string   "city",        :null => false
-    t.string   "postcode",    :null => false
+    t.string   "name",                 :null => false
+    t.string   "address",              :null => false
+    t.string   "city",                 :null => false
+    t.string   "postcode",             :null => false
     t.string   "email"
     t.string   "phone"
     t.string   "hours"
@@ -26,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20110602115153) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "business_category_id", :null => false
   end
 
   create_table "user_profiles", :force => true do |t|
