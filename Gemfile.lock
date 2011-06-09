@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/newbamboo/rack-raw-upload.git
+  revision: 8868f03c10805d5f40b259c67820c5153d1398d5
+  specs:
+    rack-raw-upload (1.0.3)
+      json
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -68,6 +75,7 @@ GEM
     jquery-rails (1.0.9)
       railties (~> 3.0)
       thor (~> 0.14)
+    json (1.5.1)
     kaminari (0.12.4)
       rails (>= 3.0.0)
     launchy (0.4.0)
@@ -86,6 +94,9 @@ GEM
     multi_json (1.0.3)
     mysql2 (0.3.2)
     orm_adapter (0.0.5)
+    paperclip (2.3.11)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
     pg (0.11.0)
     polyglot (0.3.1)
     postmark (0.9.6)
@@ -177,8 +188,10 @@ DEPENDENCIES
   kaminari
   mongrel (= 1.2.0.pre2)
   mysql2
+  paperclip
   pg
   postmark-rails
+  rack-raw-upload!
   rails (= 3.1.0.rc1)
   rake (= 0.8.7)
   rspec-rails (~> 2.6.1)

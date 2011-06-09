@@ -9,6 +9,8 @@ Kweenan::Application.routes.draw do
   resources :brands, :only => :index
   
   resource :merchant_profile, :controller => 'merchants'
+  resources :photos, :only => [:create, :destroy]
+  
   resource :user_profile, :except => :show
 
   root :to => 'pages#show', :id => 'front'

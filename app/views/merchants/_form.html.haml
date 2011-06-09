@@ -1,7 +1,6 @@
 = semantic_form_for @merchant, :url => merchant_profile_path do |f|
   = error_messages_for @merchant, :header_message => false
   
-  #photos
   = f.inputs :id => 'merchant_top_inputs' do
     = f.input :name, :hint => t('.name_description')
     = f.input :business_category

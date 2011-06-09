@@ -14,6 +14,8 @@ gem 'formtastic'
 gem 'postmark-rails'
 gem 'dynamic_form'
 gem 'kaminari'
+gem 'paperclip'
+gem 'rack-raw-upload', :git => 'git://github.com/newbamboo/rack-raw-upload.git'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.6.1"

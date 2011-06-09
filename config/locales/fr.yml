@@ -48,6 +48,17 @@ fr:
     edit:
       title: 'Modifier mon Profil Commerçant'
   
+  photos:
+    upload_button: 'Upload a photo'
+    drag_drop: 'Drag photos here to upload'
+    confirm_delete: 'Are you sure you want to delete this photo?'
+    error_messages:
+      typeError: "{file} has invalid extension. Only {extensions} are allowed."
+      sizeError: "{file} is too large, maximum file size is {sizeLimit}."
+      minSizeError: "{file} is too small, minimum file size is {minSizeLimit}."
+      emptyError: "{file} is empty, please select files again without it."
+      onLeave: "The files are being uploaded, if you leave now the upload will be cancelled."
+  
   pages:
     front:
       title: "Bienvenue à Kweenan"

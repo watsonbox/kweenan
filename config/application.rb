@@ -8,6 +8,9 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Kweenan
   class Application < Rails::Application
+    require 'rack/raw_upload'
+    config.middleware.use 'Rack::RawUpload', :paths => ['/photos']
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

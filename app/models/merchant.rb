@@ -3,8 +3,9 @@ class Merchant < ActiveRecord::Base
   validates_presence_of :name, :address, :city, :postcode, :business_category_id
   has_one :user
   belongs_to :business_category
-  has_many :carryings
+  has_many :carryings, :dependent => :destroy
   has_many :brands, :through => :carryings
+  has_many :photos, :dependent => :destroy
   attr_reader :brand_tokens
   
   def brand_tokens=(ids)

@@ -1,6 +1,6 @@
 - title @merchant.name
 
-#photos
+= render 'photos/photos', :photos => @merchant.photos, :uploadable => this_is_my_merchant_profile
 
 %h3= t('attributes.business_category') + ':'
 %p= @merchant.business_category

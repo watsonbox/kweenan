@@ -1,9 +1,99 @@
-#photos {
+#photo_container {
   float: right;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+}
+
+#photos {
+  width: 180px;
+  height: 180px;
   border: 1px solid #D8DEE2;
-  background: url(../images/photo_camera.png) no-repeat center center;
+  
+  .photo, img {
+    float: right;
+    width: 90px;
+    height: 90px;
+    
+    a.delete_photo {
+      margin: 70px 0 0 70px;
+    }
+  }
+  
+  &.photos0 {
+    background: url(../images/photo_camera.png) no-repeat center center;
+  }
+  
+  &.photos1 {
+    .photo, img {
+      width: 180px;
+      height: 180px;
+      
+      a.delete_photo {
+        margin: 160px 0 0 160px;
+      }
+    }
+  }
+  
+  &.photos2 {
+    height: 90px;
+  }
+  
+  &.photos5, &.photos6 {
+    height: 120px;
+    .photo, img {
+      width: 60px;
+      height: 60px;
+      
+      a.delete_photo {
+        margin: 40px 0 0 40px;
+      }
+    }
+  }
+  
+  .photo {
+    position: relative;
+    
+    a.delete_photo {
+      position: absolute;
+      opacity: 0;
+      display: block;
+      text-indent: -9999px;
+      background: #fff url(../assets/delete.png) no-repeat center center;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.qq-upload-button {
+  clear: right;
+  float: right;
+  background: none;
+  color: $purple;
+  border: 0;
+  font-size: 14px;
+  width: 200px;
+  text-align: right;
+}
+
+.qq-upload-list {
+  float: right;
+  margin: 10px 0;
+  list-style: none;
+  
+  li {
+    text-align: right;
+  }
+}
+
+.qq-upload-drop-area {
+  height: 50px;
+  min-height: 50px;
+  
+  span {
+    margin: 6px 0 0 0;
+    position: inline;
+    top: 0;
+  }
 }
 
 #merchant_top_inputs {
