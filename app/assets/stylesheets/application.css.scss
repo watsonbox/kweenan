@@ -4,11 +4,13 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_tree ../../../vendor/assets/stylesheets/
  *= require_self
+ *= depend_on "colorbox.css"
  *= depend_on "layout.css.scss"
  *= depend_on "forms.css.scss"
  *= depend_on "merchants.css.scss"
 */
 
+@import 'colorbox.css.scss';
 @import 'layout.css.scss';
 @import 'forms.css.scss';
 @import 'merchants.css.scss';

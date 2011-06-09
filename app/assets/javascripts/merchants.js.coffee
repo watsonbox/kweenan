@@ -17,6 +17,9 @@ $ ->
       $(this).find('a').stop().animate({"opacity": "0.8"}, "slow")
     else
       $(this).find('a').stop().animate({"opacity": "0"}, "slow")
+  
+  $("a[rel='merchant_photos']").colorbox()
+
 
 @photoUpload = (path, authToken, buttonText, dragDropText, messages = {}) ->
   uploader = new qq.FileUploader({

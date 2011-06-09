@@ -2,7 +2,7 @@
   #photos{:class => "photos#{photos.count}"}
     - photos.each do |photo|
       .photo
-        = link_to image_tag(photo.data.url(:small)), photo.data.url
+        = link_to image_tag(photo.data.url(:small)), photo.data.url, :rel => 'merchant_photos'
         = link_to 'Delete', photo_path(photo), :remote => true, :method => :delete, :class => 'delete_photo', :'data-type' => :json, :confirm => t('.confirm_delete')
 
   - if local_assigns.has_key?(:uploadable) && uploadable && photos.count < 6
