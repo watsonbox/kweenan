@@ -11,6 +11,7 @@ $ ->
   $("a.delete_photo")
     .live "ajax:success", (event, data, status, xhr) ->
       $('#photo_container').replaceWith(data['html'])
+      $("a[rel='merchant_photos']").colorbox()
   
   $(".photo").live "mouseover mouseout", (event) ->
     if ( event.type == "mouseover" )
@@ -35,4 +36,5 @@ $ ->
     messages: messages,
     onComplete: (id, fileName, data) ->
       $('#photo_container').replaceWith(data['html']) unless data['error']
+      $("a[rel='merchant_photos']").colorbox()
   });
