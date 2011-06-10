@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :production_password, :authenticate_user!, :require_user_data
   
+  def exception
+    1 / 0
+  end
+  
   protected
   
   def after_sign_in_path_for(user)

@@ -13,5 +13,6 @@ Kweenan::Application.routes.draw do
   
   resource :user_profile, :except => :show
 
+  match '/exception', :to => 'application#exception'
   root :to => 'pages#show', :id => 'front'
 end
