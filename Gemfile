@@ -16,6 +16,7 @@ gem 'dynamic_form'
 gem 'kaminari'
 gem 'paperclip'
 gem 'rack-raw-upload', :git => 'git://github.com/newbamboo/rack-raw-upload.git'
+gem 'aws-s3'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.6.1"
