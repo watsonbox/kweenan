@@ -18,9 +18,9 @@ $ ->
   
   $(".photo").live "mouseover mouseout", (event) ->
     if ( event.type == "mouseover" )
-      $(this).find('a').stop().animate({"opacity": "0.8"}, "slow")
+      $(this).find('a.delete_photo').stop().animate({"opacity": "0.8"}, "slow")
     else
-      $(this).find('a').stop().animate({"opacity": "0"}, "slow")
+      $(this).find('a.delete_photo').stop().animate({"opacity": "0"}, "slow")
   
   $("a[rel='merchant_photos']").colorbox()
 
