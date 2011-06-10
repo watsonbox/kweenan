@@ -1,4 +1,6 @@
 class PhotosController < ApplicationController
+  before_filter :require_merchant_user
+  
   def create
     if current_user.merchant.photos.count < 6
       current_user.merchant.photos.create!(:data => params[:file])
@@ -14,7 +16,7 @@ class PhotosController < ApplicationController
   end
   
   def destroy
-    Photo.find(params[:id]).destroy
+    current_user.merchant.photos.find(params[:id]).destroy
     
     respond_to do |format|
       format.js do
