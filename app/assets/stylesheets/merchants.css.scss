@@ -75,10 +75,12 @@
   text-align: right;
 }
 
-.qq-upload-list {
+.qq-upload-list, #photo_delete_spinner {
   float: right;
   margin: 10px 0;
   list-style: none;
+  line-height:15px;
+  font-size:12px;
   
   li {
     text-align: right;
@@ -94,6 +96,10 @@
     position: inline;
     top: 0;
   }
+}
+
+#photo_delete_spinner {
+  display: none;
 }
 
 #merchant_top_inputs {

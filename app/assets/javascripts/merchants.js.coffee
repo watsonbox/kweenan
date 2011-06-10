@@ -9,9 +9,12 @@ $ ->
   )
   
   $("a.delete_photo")
-    .live "ajax:success", (event, data, status, xhr) ->
+    .live("ajax:success", (event, data, status, xhr) ->
       $('#photo_container').replaceWith(data['html'])
       $("a[rel='merchant_photos']").colorbox()
+    )
+    .live("ajax:beforeSend", -> $("#photo_delete_spinner").show())
+    .live("ajax:complete", -> $("#photo_delete_spinner").hide())
   
   $(".photo").live "mouseover mouseout", (event) ->
     if ( event.type == "mouseover" )
@@ -20,7 +23,6 @@ $ ->
       $(this).find('a').stop().animate({"opacity": "0"}, "slow")
   
   $("a[rel='merchant_photos']").colorbox()
-
 
 @photoUpload = (path, authToken, buttonText, dragDropText, messages = {}) ->
   uploader = new qq.FileUploader({
