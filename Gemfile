@@ -36,4 +36,5 @@ end
 group :production do
   gem 'therubyracer-heroku', '0.8.1.pre3'
   gem 'pg'
+  gem 'newrelic_rpm', '3.1.0.beta3'
 end
