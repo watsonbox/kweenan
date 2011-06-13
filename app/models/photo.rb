@@ -7,10 +7,15 @@ class Photo < ActiveRecord::Base
   has_attached_file :data,
     :styles => { :small => "200x200#", :thumb => "100x100#" },
     :storage => :s3,
-    :path => '/merchant/:id/:style.:extension',
+    :path => '/merchant/:id/:style.:data_file_name_extension',
     :bucket => ENV['S3_BUCKET'] || "kweenan#{Rails.env}",
     :s3_credentials => {
       :access_key_id => ENV['S3_KEY'] || 'AKIAJQ5MGLZBPNEPXM7Q',
       :secret_access_key => ENV['S3_SECRET'] || '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'
     }
+  
+  # Interpolation in paperclip causes use of model attribute not temp file original_filename
+  Paperclip.interpolates :data_file_name_extension  do |attachment, style|
+    File.extname(attachment.instance.data_file_name).gsub(/^\.+/, "")
+  end
 end

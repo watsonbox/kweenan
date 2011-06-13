@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
   
   def create
     if current_user.merchant.photos.count < 6
-      current_user.merchant.photos.create!(:data => params[:file])
+      current_user.merchant.photos.create!(:data => env['rack.request.form_hash']['file'][:tempfile], :data_file_name => params[:qqfile])
       render :json => {
         :success => true,
         :html => render_to_string(:partial => 'photos', :locals => { :photos => current_user.merchant.photos, :uploadable => true })

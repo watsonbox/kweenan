@@ -8,7 +8,6 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Kweenan
   class Application < Rails::Application
-    require 'rack/raw_upload'
     config.middleware.use 'Rack::RawUpload', :paths => ['/photos']
     
     # Settings in config/environments/* take precedence over those specified here.

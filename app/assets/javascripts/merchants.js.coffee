@@ -25,6 +25,7 @@ $ ->
   new qq.FileUploader
     element: document.getElementById('file-uploader'),
     allowedExtensions: ['jpg', 'jpeg', 'png', 'gif'],
+    limit: 5242880, # 5MB
     action: path,
     params:
       authenticity_token: authToken,
