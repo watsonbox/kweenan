@@ -1,3 +1,5 @@
+PRODUCT_NAME = 'Kweenan'
+
 ADMIN_EMAIL = 'howard@watsonbox.net'
 
 PRODUCTION_USER = 'frederic.pelouze@yahoo.fr'

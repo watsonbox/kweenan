@@ -2,7 +2,7 @@
 %html
   %head
     %meta{ :charset => "utf-8" }
-    %title= yield(:title) || 'Untitled'
+    %title= yield(:title) || ::PRODUCT_NAME
     = yield :head
     = stylesheet_link_tag 'application'
     != hoptoad_javascript_notifier
@@ -24,9 +24,9 @@
 
       %aside
         - if signed_in?
-          = render 'shared/left_menu'
+          = render 'left_menu'
         - else
-          = render 'shared/sign_in_links'
+          = render 'sign_in_links'
 
       #content
         #flash
@@ -35,4 +35,4 @@
         = yield
         .clearfix
       
-    %footer= render 'shared/footer'
+    %footer= render 'footer'
