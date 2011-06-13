@@ -7,7 +7,7 @@ $ ->
   $("a.delete_photo")
     .live "ajax:success", (event, data, status, xhr) ->
       $('#photo_container').replaceWith(data['html'])
-      $("a[rel='merchant_photos']").colorbox()
+      doColorBox()
     .live "ajax:beforeSend", ->
       $("#photo_delete_spinner").show()
     .live "ajax:complete", ->
@@ -19,7 +19,7 @@ $ ->
     else
       $(this).find('a.delete_photo').stop().animate opacity: 0, "slow"
   
-  $("a[rel='merchant_photos']").colorbox()
+  doColorBox()
 
 @photoUpload = (path, authToken, buttonText, dragDropText, messages = {}) ->
   new qq.FileUploader
@@ -38,4 +38,9 @@ $ ->
     onComplete: (id, fileName, data) ->
       unless data['error']
         $('#photo_container').replaceWith data['html']
-        $("a[rel='merchant_photos']").colorbox()
+        doColorBox()
+
+doColorBox = ->
+  $("a[rel='merchant_photos']").colorbox
+    maxHeight: '100%',
+    maxWidth: '100%'
