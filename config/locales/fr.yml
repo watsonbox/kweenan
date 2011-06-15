@@ -29,6 +29,7 @@ fr:
     new:
       title: "Tell us about Yourself"
       intro: "Please tell us a little more about yourself and get started using Kweenan right away!"
+      provide_more_info: "Please note the more accurate and precise information you provide the better experience you will get using Kweenan."
     edit:
       title: 'Mon Profil'
   
@@ -40,6 +41,7 @@ fr:
       brands_hint: 'Enter the brands which you currently carry'
     index:
       title: 'Des Commerçants Proche de Moi'
+      no_merchants_found: 'No merchants found'
     show:
       notices: 'Notices'
       offers: 'Offers'
@@ -78,6 +80,8 @@ fr:
     password_confirmation: "Confirmation de mot de passe"
     current_password: "Mot de passe actuel"
     name: "Nom"
+    first_name: "Prénom"
+    last_name: "Nom"
     gender: "Sexe"
     date_of_birth: "Date de naissance"
     address: "Adresse"

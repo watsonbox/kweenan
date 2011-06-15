@@ -1,12 +1,14 @@
+- uploadable = local_assigns.has_key?(:uploadable) && uploadable
+
 #photo_container
   #photos{:class => "photos#{photos.count}"}
     - photos.each do |photo|
       .photo
         = link_to image_tag(photo.data.url(:small)), photo.data.url, :rel => 'merchant_photos'
-        - if local_assigns.has_key?(:uploadable) && uploadable
+        - if uploadable
           = link_to t('.delete_photo'), photo_path(photo), :remote => true, :method => :delete, :class => 'delete_photo', :'data-type' => :json, :confirm => t('.confirm_delete'), :title => t('.delete_photo')
 
-  - if local_assigns.has_key?(:uploadable) && uploadable && photos.count < 6
+  - if uploadable && photos.count < 6
     #file-uploader
       %noscript
         %p Please enable JavaScript to use file uploader

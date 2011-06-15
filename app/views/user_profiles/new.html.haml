@@ -2,4 +2,14 @@
 
 %p= t('.intro')
 
-= render 'form', :profile => @user_profile
+= semantic_form_for @user_profile, :url => user_profile_path do |f|
+  = error_messages_for @user_profile, :header_message => false
+  = f.inputs do
+    = f.input :last_name
+    = f.input :first_name
+    = f.input :gender, :as => :select, :collection => { t('male') => 'M', t('female') => 'F' }
+    = f.input :postcode
+    = f.input :address, :hint => t('.provide_more_info')
+  
+  = f.buttons do
+    = f.commit_button t('.save'), :button_html => { :class => :button }
