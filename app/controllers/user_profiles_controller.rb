@@ -11,7 +11,7 @@ class UserProfilesController < ApplicationController
     @user_profile = current_user.build_profile(params[:user_profile])
     
     if @user_profile.save
-      redirect_to edit_user_profile_path, :notice => t('user_profiles.saved')
+      redirect_to merchants_path, :notice => t('user_profiles.saved')
     else
       render :action => 'new'
     end
@@ -25,7 +25,7 @@ class UserProfilesController < ApplicationController
     @user_profile = current_user.profile
     
     if @user_profile.update_attributes(params[:user_profile])
-      redirect_to edit_user_profile_path, :notice => t('user_profiles.saved')
+      redirect_to merchants_path, :notice => t('user_profiles.saved')
     else
       render :action => 'edit'
     end
