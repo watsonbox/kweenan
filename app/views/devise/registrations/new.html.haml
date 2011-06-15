@@ -1,5 +1,5 @@
-- is_merchant = request.fullpath.include?('merchant')
-- title t(".#{is_merchant ? 'merchant' : 'customer'}_title")
+- resource.type ||= request.fullpath.include?('merchant') ? 'MerchantUser' : 'Customer'
+- title t(".#{resource.type.underscore}_title")
 
 = semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = error_messages_for resource, :header_message => false
@@ -7,6 +7,6 @@
     = f.input :email, :input_html => { :tabindex => 1, :autofocus => true }
     = f.input :password, :input_html => { :tabindex => 2 }
     = f.input :password_confirmation, :input_html => { :tabindex => 3 }
-  = f.hidden_field :type, :value => is_merchant ? 'MerchantUser' : 'Customer'
+  = f.hidden_field :type
   = f.buttons do
     = f.commit_button t('.sign_up'), :button_html => { :class => :button, :tabindex => 4 }

@@ -55,7 +55,7 @@ fr:
       updated: 'Votre compte a été modifié avec succès.'
       destroyed: 'Au revoir! Votre compte a été annulé avec succès. Nous espérons vous revoir bientôt.'
       new:
-        merchant_title: "S'enregistrer comme Commerçant"
+        merchant_user_title: "S'enregistrer comme Commerçant"
         customer_title: "S'enregistrer comme Client(e)"
       edit:
         title: 'Paramètres de mon compte'
