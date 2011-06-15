@@ -1,8 +1,7 @@
 %ol
   - if current_user.kind_of?(MerchantUser)
     %li= link_to t('.my_merchant_profile'), merchant_profile_path
+    %li= link_to t('.my_account'), edit_user_registration_path
   - else
     %li= link_to t('.find_merchants'), merchants_path
-    %li= link_to t('.my_profile'), edit_user_profile_path
-    
-  %li= link_to t('.my_account'), edit_user_registration_path
+    %li= link_to t('.my_account'), edit_user_profile_path

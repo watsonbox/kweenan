@@ -10,6 +10,11 @@
     = f.input :address
     = f.input :city
     = f.input :postcode
+    
+    %li
+      %label= t('attributes.email')
+      = current_user.email
+      = link_to "(#{t('.modify_email_and_password')})", edit_user_registration_path
   
   = f.buttons do
     = f.commit_button t('.save'), :button_html => { :class => :button }
