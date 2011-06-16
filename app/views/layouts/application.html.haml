@@ -1,13 +1,20 @@
-!!!
+!!! 5
 %html
   %head
-    %meta{ :charset => "utf-8" }
+    %meta(charset="utf-8")
+    %meta(name="description" content="???")
+    %meta(name="author" content="???")
+    %meta(name="copyright" content="Copyright ??? #{Time.now.year}. All Rights Reserved.")
+    
     %title= yield(:title) || ::PRODUCT_NAME
     = yield :head
     = stylesheet_link_tag 'application'
-    != hoptoad_javascript_notifier
     = javascript_include_tag 'application'
+    != hoptoad_javascript_notifier
     = csrf_meta_tag
+    
+    /[if lt IE 9]
+      %script{:src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
 
   %body
     #body

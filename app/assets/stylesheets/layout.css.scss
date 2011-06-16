@@ -1,6 +1,11 @@
 @import 'rounded_corners.css.sass';
 @import 'colors.css.scss';
 
+/* Make HTML 5 elements display block-level for consistent styling */  
+header, nav, article, footer, address, aside {  
+  display: block;
+}
+
 a {
   color: $purple;
   text-decoration: none;
@@ -45,6 +50,10 @@ ul {
 
 p {
   margin-top: 0;
+}
+
+img {
+  border: 0;
 }
 
 #body {
