@@ -3,11 +3,14 @@ class PhotosController < ApplicationController
   
   def create
     if current_user.merchant.photos.count < 6
-      current_user.merchant.photos.create!(:data => env['rack.request.form_hash']['file'][:tempfile], :data_file_name => params[:qqfile])
+      current_user.merchant.photos.create!(:data => params[:qqfile])
       render :json => {
         :success => true,
-        :html => render_to_string(:partial => 'photos', :locals => { :photos => current_user.merchant.photos, :uploadable => true })
-      }
+        :html => render_to_string(
+          :partial => 'photos',
+          :locals => { :photos => current_user.merchant.photos, :uploadable => true }
+        ).gsub('&', '&amp;').gsub('<', '&lt;').gsub('>', '&gt;')
+      }, :content_type => 'text/html'
     else
       render :json => {
         :error => 'Too many photos!' # This should never be shown to the user

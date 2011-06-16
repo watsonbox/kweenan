@@ -37,8 +37,12 @@ $ ->
     messages: messages,
     onComplete: (id, fileName, data) ->
       unless data['error']
-        $('#photo_container').replaceWith data['html']
+        # Needed to do this in order to un-escape HTML from server
+        $('#photo_container').replaceWith $('<div/>').html(data['html']).text()
         doColorBox()
+
+qq.UploadHandlerXhr.isSupported = ->
+  return false
 
 doColorBox = ->
   $("a[rel='merchant_photos']").colorbox
