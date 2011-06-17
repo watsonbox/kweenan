@@ -3,13 +3,12 @@
 = semantic_form_for @user_profile, :url => user_profile_path do |f|
   = error_messages_for @user_profile, :header_message => false
   = f.inputs do
-    = f.input :last_name
-    = f.input :first_name
-    = f.input :gender, :as => :select, :collection => { t('male') => 'M', t('female') => 'F' }
-    = f.input :date_of_birth, :start_year => Date.today.year, :end_year => Date.today.year - 100
+    = f.input :name
     = f.input :address
     = f.input :city
     = f.input :postcode
+    = f.input :gender, :as => :select, :collection => { t('male') => 'M', t('female') => 'F' }
+    = f.input :date_of_birth, :start_year => Date.today.year, :end_year => Date.today.year - 100
     
     %li
       %label= t('attributes.email')
