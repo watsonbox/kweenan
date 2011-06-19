@@ -1,21 +1,22 @@
-- uploadable = local_assigns.has_key?(:uploadable) && uploadable
+- upload_type = local_assigns.has_key?(:upload_type) && upload_type
+- upload_limit = local_assigns.has_key?(:upload_limit) ? upload_limit : 6
 
 #photo_container
   #photos{:class => "photos#{photos.count}"}
     - photos.each do |photo|
       .photo
         = link_to image_tag(photo.data.url(:small)), photo.data.url, :rel => 'merchant_photos'
-        - if uploadable
-          = link_to t('.delete_photo'), photo_path(photo), :remote => true, :method => :delete, :class => 'delete_photo', :'data-type' => :json, :confirm => t('.confirm_delete'), :title => t('.delete_photo')
+        - if upload_type
+          = link_to t('.delete_photo'), url_for(:controller => upload_type.to_s.pluralize, :action => 'destroy', :id => photo.id), :remote => true, :method => :delete, :class => 'delete_photo', :'data-type' => :json, :confirm => t('photos.confirm_delete'), :title => t('.delete_photo')
 
-  - if uploadable && photos.count < 6
+  - if upload_type && photos.count < upload_limit
     #file-uploader
       %noscript
         %p Please enable JavaScript to use file uploader
   
     :javascript
       $(function() {
-        photoUpload('#{photos_path}', '#{form_authenticity_token}', '#{t('.upload_button')}', '#{t('.drag_drop')}', #{t('.error_messages').to_json});
+        photoUpload('#{url_for(:controller => upload_type.to_s.pluralize, :action => 'create')}', '#{form_authenticity_token}', '#{t('photos.upload_button')}', '#{t('photos.drag_drop')}', #{t('photos.error_messages').to_json});
       });
 
   #photo_delete_spinner

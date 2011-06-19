@@ -10,7 +10,7 @@ class Merchant < ActiveRecord::Base
   belongs_to :business_category
   has_many :carryings, :dependent => :destroy
   has_many :brands, :through => :carryings
-  has_many :photos, :dependent => :destroy
+  has_many :photos, :as => :photoable, :class_name => 'MerchantPhoto', :dependent => :destroy
   attr_reader :brand_tokens
   
   def brand_tokens=(ids)

@@ -47,7 +47,9 @@ ActiveRecord::Schema.define(:version => 20110608125015) do
   end
 
   create_table "photos", :force => true do |t|
-    t.integer  "merchant_id"
+    t.string   "type"
+    t.integer  "photoable_id"
+    t.string   "photoable_type"
     t.string   "data_file_name"
     t.string   "string"
     t.string   "data_content_type"

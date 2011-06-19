@@ -1,14 +1,15 @@
-class PhotosController < ApplicationController
+class MerchantPhotosController < ApplicationController
   before_filter :require_merchant_user
   
   def create
     if current_user.merchant.photos.count < 6
-      current_user.merchant.photos.create!(:data => params[:qqfile])
+      current_user.merchant.photos << MerchantPhoto.new(:data => params[:qqfile])
+      current_user.merchant.save!
       render :json => {
         :success => true,
         :html => render_to_string(
-          :partial => 'photos',
-          :locals => { :photos => current_user.merchant.photos, :uploadable => true }
+          :partial => 'photos/photos',
+          :locals => { :photos => current_user.merchant.photos, :upload_type => :merchant_photo }
         ).gsub('&', '&amp;').gsub('<', '&lt;').gsub('>', '&gt;')
       }, :content_type => 'text/html'
     else
@@ -25,7 +26,7 @@ class PhotosController < ApplicationController
       format.js do
         render :json => {
           :success => true,
-          :html => render_to_string(:partial => 'photos', :locals => { :photos => current_user.merchant.photos, :uploadable => true })
+          :html => render_to_string(:partial => 'photos/photos', :locals => { :photos => current_user.merchant.photos, :upload_type => :merchant_photo })
         }
       end
     end

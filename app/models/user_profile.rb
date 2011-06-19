@@ -4,4 +4,5 @@ class UserProfile < ActiveRecord::Base
   validates :gender, :inclusion => { :in => %w(M F), :allow_nil => true, :allow_blank => true }
   
   belongs_to :user
+  has_one :photo, :as => :photoable, :class_name => 'ProfilePhoto', :dependent => :destroy
 end

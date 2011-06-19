@@ -9,7 +9,10 @@ Kweenan::Application.routes.draw do
   resources :brands, :only => :index
   
   resource :merchant_profile, :controller => 'merchants'
+  
   resources :photos, :only => [:create, :destroy]
+  resources :merchant_photos, :only => [:create, :destroy]
+  resources :profile_photos, :only => [:create, :destroy]
   
   resource :user_profile, :except => :show
 
