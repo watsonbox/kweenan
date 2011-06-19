@@ -264,6 +264,7 @@ fr:
               blank: "Email doit être rempli"
               too_long: "Email est trop long (pas plus de %{count} caractères)"
               invalid: "Email n'est pas valide"
+              taken: "Email n'est pas disponible"
             password:
               blank: "Mot de passe doit être rempli"
               confirmation: "Mot de passe ne concorde pas avec la confirmation"
