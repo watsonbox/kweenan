@@ -8,10 +8,6 @@
 %h3= t('attributes.address') + ':'
 %p= @merchant.full_address
 
-- if @merchant.email.present?
-  %h3= t('attributes.email') + ':'
-  %p= @merchant.email
-
 - if @merchant.phone.present?
   %h3= t('attributes.phone') + ':'
   %p= @merchant.phone

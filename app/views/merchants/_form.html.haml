@@ -8,7 +8,6 @@
     = f.input :city
     = f.input :postcode
   = f.inputs do
-    = f.input :email
     = f.input :phone
     = f.input :hours
     = f.input :brand_tokens, :label => t('attributes.brands'), :hint => t('.brands_hint'), :as => :string, :input_html => { "data-pre" => @merchant.brands.map(&:attributes).to_json }

@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(:version => 20110608125015) do
     t.string   "address",              :null => false
     t.string   "city",                 :null => false
     t.string   "postcode",             :null => false
-    t.string   "email"
     t.string   "phone"
     t.string   "hours"
     t.text     "description"

@@ -5,7 +5,6 @@ class CreateMerchants < ActiveRecord::Migration
       t.string :address, :null => false
       t.string :city, :null => false
       t.string :postcode, :null => false
-      t.string :email
       t.string :phone
       t.string :hours
       t.text :description
