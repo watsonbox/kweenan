@@ -7,6 +7,7 @@
     = f.input :email, :input_html => { :tabindex => 1, :autofocus => true }
     = f.input :password, :input_html => { :tabindex => 2 }
     = f.input :password_confirmation, :input_html => { :tabindex => 3 }
+    = f.input :terms, :as => :boolean, :label => t('attributes.terms').gsub(/\{\{(.*)\}\}/, link_to('\1', page_path('terms'))).html_safe
   = f.hidden_field :type
   = f.buttons do
     = f.commit_button t('.sign_up'), :button_html => { :class => :button, :tabindex => 4 }

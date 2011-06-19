@@ -91,6 +91,7 @@ fr:
     hours: "Heures d'ouverture"
     business_category: "Business Category"
     brands: "Marques"
+    terms: "I agree to the {{terms and conditions}}"
     created_at: "Créé le"
     updated_at: "Modifié le"
   
@@ -227,7 +228,7 @@ fr:
       submit: "Enregistrer ce %{model}"
 
   errors:
-    format: "%{attribute} %{message}"
+    format: "%{message}"
     messages: &errors_messages
       inclusion: "n'est pas inclus(e) dans la liste"
       exclusion: "n'est pas disponible"
@@ -256,6 +257,49 @@ fr:
 
   activerecord:
     errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Email doit être rempli"
+              too_long: "Email est trop long (pas plus de %{count} caractères)"
+              invalid: "Email n'est pas valide"
+            password:
+              blank: "Mot de passe doit être rempli"
+              confirmation: "Mot de passe ne concorde pas avec la confirmation"
+              too_short: "Mot de passe est trop court (au moins %{count} caractères)"
+              too_long: "Mot de passe est trop long (pas plus de %{count} caractères)"
+            current_password:
+              blank: "Mot de passe actuel doit être rempli"
+              invalid: "Mot de passe actuel n'est pas valide"
+            terms:
+              accepted: "Please accept the terms and conditions first"
+        user_profile:
+          attributes:
+            name:
+              blank: "Nom doit être rempli"
+              too_long: "Nom est trop long (pas plus de %{count} caractères)"
+            postcode:
+              blank: "Code postal doit être rempli"
+              wrong_length: "Code postal ne fait pas la bonne longueur (doit comporter %{count} caractères)"
+              not_a_number: "Code postal n'est pas un nombre"
+        merchant:
+          attributes:
+            name:
+              blank: "Nom doit être rempli"
+              too_long: "Nom est trop long (pas plus de %{count} caractères)"
+            business_category:
+              blank: "Business Category doit être rempli"
+            address:
+              blank: "Addresse doit être rempli"
+              too_long: "Addresse est trop long (pas plus de %{count} caractères)"
+            city:
+              blank: "Ville doit être remplie"
+              too_long: "Ville est trop long (pas plus de %{count} caractères)"
+            postcode:
+              blank: "Code postal doit être rempli"
+              wrong_length: "Code postal ne fait pas la bonne longueur (doit comporter %{count} caractères)"
+              not_a_number: "Code postal n'est pas un nombre"
       messages:
         taken: "n'est pas disponible"
         record_invalid: "La validation a échoué : %{errors}"
@@ -263,7 +307,8 @@ fr:
       template:
         <<: *errors_template
       full_messages:
-        format: "%{attribute} %{message}"
+        format: "%{message}"
+        
     attributes:
       merchant:
         description: "Description d'enterprise"
