@@ -19,6 +19,10 @@ $ ->
     else
       $(this).find('a.delete_photo').stop().animate opacity: 0, "slow"
   
+  $('#merchant_postcode').change ->
+    if $(this).val().substring(0,3) == '750'
+      $('#merchant_city').val('Paris')
+  
   doColorBox()
 
 @photoUpload = (path, authToken, buttonText, dragDropText, messages = {}) ->
