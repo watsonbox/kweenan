@@ -106,6 +106,38 @@
   width: 400px;
 }
 
+#content form .business_hours {
+  fieldset.business_hour {
+    label {
+      display: inline;
+      margin: 0 10px;
+      color: #666;
+    }
+
+    input[type='text'] {
+      width: 40px;
+    }
+
+    ol {
+      display: block;
+    }
+    
+    li {
+      font-size: 14px;
+      line-height: 36px;
+      float: left;
+    
+      &.day {
+        width: 100px;
+      }
+    
+      .inline-errors {
+        display: none;
+      }
+    }
+  }
+}
+
 #merchant_business_category_id {
   width: 310px;
 }

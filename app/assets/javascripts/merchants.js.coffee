@@ -23,6 +23,12 @@ $ ->
     if $(this).val().substring(0,3) == '750'
       $('#merchant_city').val('Paris')
   
+  $('fieldset.business_hour input.monday').change ->
+    monday_value = $(this).val()
+    class_name = $(this).attr('class').split(/\s+/).pop()
+    $("fieldset.business_hour input.#{class_name}").each (i,v) ->
+      $(v).val(monday_value) if $(v).val() == ''
+  
   doColorBox()
 
 @photoUpload = (path, authToken, buttonText, dragDropText, messages = {}) ->

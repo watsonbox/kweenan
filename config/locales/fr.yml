@@ -88,7 +88,7 @@ fr:
     address: "Adresse"
     city: "Ville"
     postcode: "Code Postal"
-    hours: "Heures d'ouverture"
+    business_hours: "Heures d'ouverture"
     business_category: "Business Category"
     brands: "Marques"
     terms: "I agree to the {{terms and conditions}}"
@@ -301,6 +301,22 @@ fr:
               blank: "Code postal doit être rempli"
               wrong_length: "Code postal ne fait pas la bonne longueur (doit comporter %{count} caractères)"
               not_a_number: "Code postal n'est pas un nombre"
+            business_hours:
+              invalid: "Business hours are not valid"
+        business_hour:
+          attributes:
+            start_time:
+              blank: "You must specify a start time if you enter an end time"
+              invalid: "Start time must be of the format HH:MM"
+            end_time:
+              blank: "You must specify an end time if you enter a start time"
+              invalid: "End time must be of the format HH:MM"
+            break_start_time:
+              blank: "You must specify a start time if you enter an end time"
+              invalid: "Break start time must be of the format HH:MM"
+            break_end_time:
+              blank: "You must specify an end time if you enter a start time"
+              invalid: "Break end time must be of the format HH:MM"
       messages:
         taken: "n'est pas disponible"
         record_invalid: "La validation a échoué : %{errors}"
@@ -313,6 +329,11 @@ fr:
     attributes:
       merchant:
         description: "Description d'enterprise"
+      business_hour:
+        start_time: "Start"
+        end_time: "Finish"
+        break_start_time: "Break Start"
+        break_end_time: "Break Finish"
         
     models:
       merchant_user: "Commerçant"
