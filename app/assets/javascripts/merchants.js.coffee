@@ -29,6 +29,11 @@ $ ->
     $("fieldset.business_hour input.#{class_name}").each (i,v) ->
       $(v).val(monday_value) if $(v).val() == ''
   
+  $('#merchant_description').cleditor
+    controls: 'bold italic underline | undo redo | cut copy paste pastetext',
+    width: '600px',
+    bodyStyle: 'margin: 4px; color: #444; font-size: 16px; font-family: helvetica neue, arial, helvetica, lucida grande, sans-serif; cursor:text'
+  
   doColorBox()
 
 @photoUpload = (path, authToken, buttonText, dragDropText, messages = {}) ->

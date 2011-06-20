@@ -22,7 +22,7 @@
 
 - if @merchant.description.present?
   %h3= t('activerecord.attributes.merchant.description') + ':'
-  %p= @merchant.description
+  %p= sanitize @merchant.description, :tags => %w(b i u)
 
 %h2= t('.notices')
 %p [not yet implemented]

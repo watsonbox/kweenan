@@ -8,4 +8,5 @@
 //= require jquery_ujs
 //= require jquery.tokeninput
 //= require jquery.colorbox.js
+//= require jquery.cleditor.js
 //= require_tree .
