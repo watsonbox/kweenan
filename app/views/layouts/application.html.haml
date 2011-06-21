@@ -22,7 +22,9 @@
         %nav
           - if user_signed_in?
             = t('devise.sessions.signed_in_as', :user => current_user.email)
-            = link_to "(#{t('devise.shared.sign_out')})", destroy_user_session_path, :id => 'sign_out'
+            = link_to t('.my_account'), edit_user_profile_path
+            |
+            = link_to t('devise.shared.sign_out'), destroy_user_session_path, :id => 'sign_out'
           - else
             = t('devise.sessions.signed_out')
             

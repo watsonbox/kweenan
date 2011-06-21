@@ -7,11 +7,11 @@ fr:
   female: 'Female'
   or: 'ou'
   back: 'revenir'
+  my_account: 'Mon Compte'
   
   application:
     left_menu:
       my_merchant_profile: 'Mon Profil Commerçant'
-      my_account: 'Mon Compte'
       my_profile: 'Mon Profil'
       find_merchants: 'Chercher des commerçants'
     sign_in_links:
