@@ -19,6 +19,12 @@ class Merchant < ActiveRecord::Base
   accepts_nested_attributes_for :business_hours, :allow_destroy => true
   attr_reader :brand_tokens
   
+  validate do
+    if postcode[0,3] == '750' && city.downcase != 'paris'
+      errors.add(:city, I18n.t('activerecord.errors.models.merchant.attributes.city.does_not_match_postcode'))
+    end
+  end
+  
   def filled_business_hours
     @filled_business_hours ||= [1,2,3,4,5,6,0].collect do |i|
       business_hours.select { |h| h.day == i }.first || BusinessHour.new(:day => i)

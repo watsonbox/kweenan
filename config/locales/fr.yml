@@ -297,6 +297,7 @@ fr:
             city:
               blank: "Ville doit être remplie"
               too_long: "Ville est trop long (pas plus de %{count} caractères)"
+              does_not_match_postcode: "City does not match postcode"
             postcode:
               blank: "Code postal doit être rempli"
               wrong_length: "Code postal ne fait pas la bonne longueur (doit comporter %{count} caractères)"
