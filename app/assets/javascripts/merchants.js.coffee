@@ -23,11 +23,31 @@ $ ->
     if $(this).val().substring(0,3) == '750'
       $('#merchant_city').val('Paris')
   
-  $('fieldset.business_hour input.monday').change ->
-    monday_value = $(this).val()
-    class_name = $(this).attr('class').split(/\s+/).pop()
-    $("fieldset.business_hour input.#{class_name}").each (i,v) ->
-      $(v).val(monday_value) if $(v).val() == ''
+  $('#merchant_closed_for_lunch').change ->
+    if $('#merchant_closed_for_lunch').is(':checked')
+      $('table.business_hours div.break_times').show()
+      $('table.business_hours tr').each ->
+        if $(this).find('input.closed_check') && !$(this).find('input.closed_check').is(':checked')
+          $(this).find('input.end_time2').val($(this).find('input.end_time').val())
+          $(this).find('input.start_time2').val('13:00')
+          $(this).find('input.end_time').val('12:00')
+    else
+      $('table.business_hours tr').each ->
+        if $(this).find('input.closed_check') && !$(this).find('input.closed_check').is(':checked')
+          $(this).find('input.end_time').val($(this).find('input.end_time2').val())
+      $('table.business_hours div.break_times').hide()
+      $('table.business_hours div.break_times input').val('')
+  
+  $('table.business_hours .closed_check').change ->
+    hours_row = $(this).closest('tr').find('td.hours')
+    
+    if $(this).is(':checked')
+      hours_row.find('.open').hide()
+      hours_row.find("input[type='text']").val('')
+      hours_row.find('.closed').show()
+    else
+      hours_row.find('.open').show()
+      hours_row.find('.closed').hide()
   
   $('#merchant_description').cleditor
     controls: 'bold italic underline | undo redo | cut copy paste pastetext',

@@ -12,15 +12,7 @@
   = f.inputs :class => 'business_hours' do
     %li= f.label :business_hours
     %li
-      - @merchant.filled_business_hours.each do |hour|
-        = f.semantic_fields_for :business_hours, hour do |hour_builder|
-          = f.inputs :class => 'business_hour' do
-            %li.day= hour
-            = hour_builder.input :day, :as => :hidden
-            = hour_builder.input :start_time, :input_html => { :value => hour.start_time, :class => business_hour_class(:start_time, hour) }
-            = hour_builder.input :end_time, :input_html => { :value => hour.end_time, :class => business_hour_class(:end_time, hour) }
-            = hour_builder.input :break_start_time, :input_html => { :value => hour.break_start_time, :class => business_hour_class(:break_start_time, hour) }
-            = hour_builder.input :break_end_time, :input_html => { :value => hour.break_end_time, :class => business_hour_class(:break_end_time, hour) }
+      = render 'hours', :f => f
   
   = f.inputs do
     = f.input :brand_tokens, :label => t('attributes.brands'), :hint => t('.brands_hint'), :as => :string, :input_html => { "data-pre" => @merchant.brands.map(&:attributes).to_json }

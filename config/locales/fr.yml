@@ -50,6 +50,9 @@ fr:
       title: 'Your Business Details'
     edit:
       title: 'Modifier mon Profil Commerçant'
+    hours:
+      closed: 'Closed'
+      closed_for_lunch: 'Closed for lunch'
   
   photos:
     upload_button: 'Upload a photo'

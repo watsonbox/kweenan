@@ -1,0 +1,26 @@
+%table.business_hours
+  %tr
+    %th{:colspan => 2}
+      = f.check_box :closed_for_lunch
+      = t('.closed_for_lunch')
+    %th
+      = t('.closed')
+  - @merchant.filled_business_hours.each do |hour|
+    = f.semantic_fields_for :business_hours, hour do |hour_builder|
+      %tr
+        %td.day
+          = hour
+          = hour_builder.hidden_field :day
+        %td.hours
+          .closed{ :style => hour.closed? ? '' : 'display: none' }
+            \-
+          .open{ :style => hour.open? ? '' : 'display: none' }
+            = hour_builder.text_field :start_time, :value => hour.start_time, :class => business_hour_class(:start_time, hour)
+            \-
+            = hour_builder.text_field :end_time, :value => hour.end_time, :class => business_hour_class(:end_time, hour)
+            %div{:class => "break_times", :style => @merchant.closed_for_lunch ? '' : 'display: none' }
+              = hour_builder.text_field :start_time2, :value => hour.start_time2, :class => business_hour_class(:start_time2, hour)
+              \-
+              = hour_builder.text_field :end_time2, :value => hour.end_time2, :class => business_hour_class(:end_time2, hour)
+        %td.closed
+          = check_box_tag :closed_check, 1, hour.closed?, :class => 'closed_check'

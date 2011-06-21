@@ -1,5 +1,5 @@
 class BusinessHour < ActiveRecord::Base
-  TIMES = [:start_time, :end_time, :break_start_time, :break_end_time]
+  TIMES = [:start_time, :end_time, :start_time2, :end_time2]
   attr_accessible *(TIMES + [:day])
   
   belongs_to :merchant
@@ -11,10 +11,10 @@ class BusinessHour < ActiveRecord::Base
       errors.add(:start_time, :blank)
     end
     
-    if break_start_time.present? && break_end_time.blank?
-      errors.add(:break_end_time, :blank)
-    elsif break_start_time.blank? && break_end_time.present?
-      errors.add(:break_start_time, :blank)
+    if start_time2.present? && end_time2.blank?
+      errors.add(:end_time2, :blank)
+    elsif start_time2.blank? && end_time2.present?
+      errors.add(:start_time2, :blank)
     end
     
     TIMES.each do |time|
@@ -30,7 +30,7 @@ class BusinessHour < ActiveRecord::Base
     define_method method do
       if val = instance_variable_get("@#{method}_string")
         val
-      elsif val = super()
+      elsif val = read_attribute(method)
         (val/60).to_s.rjust(2, '0') + ':' + (val%60).to_s.rjust(2, '0')
       else
         nil
@@ -52,6 +52,18 @@ class BusinessHour < ActiveRecord::Base
         end
       end
     end
+  end
+  
+  def open?
+    !closed?
+  end
+  
+  def closed?
+    start_time.blank?
+  end
+  
+  def closed_for_lunch?
+    open? && start_time2.present?
   end
   
   def day_name

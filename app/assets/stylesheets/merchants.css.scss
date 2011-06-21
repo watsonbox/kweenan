@@ -106,34 +106,52 @@
   width: 400px;
 }
 
-#content form .business_hours {
-  fieldset.business_hour {
-    label {
-      display: inline;
-      margin: 0 10px;
-      color: #666;
-    }
+#content form table.business_hours {
+  border-spacing: 0px;
+  
+  th {
+    font-size: 12px;
+    border-bottom: 1px dashed #ccc;
+    padding: 4px;
+    text-align: left;
+  }
 
-    input[type='text'] {
-      width: 40px;
+  td {
+    vertical-align: top;
+    line-height: 34px;
+    padding: 4px;
+    border-bottom: 1px dashed #ccc;
+    
+    &.day {
+      width: 100px;
     }
+    
+    &.hours {
+      width: 160px;
+      
+      input[type='text'] {
+        width: 50px;
+      }
+    }
+    
+    &.closed {
+      vertical-align: middle;
+    }
+  }
 
-    ol {
-      display: block;
-    }
+  ol {
+    display: block;
+  }
+  
+  li {
+    font-size: 14px;
+    margin-bottom: 0;
+    display: inline;
     
-    li {
-      font-size: 14px;
-      line-height: 36px;
-      float: left;
     
-      &.day {
-        width: 100px;
-      }
-    
-      .inline-errors {
-        display: none;
-      }
+  
+    .inline-errors {
+      display: none;
     }
   }
 }

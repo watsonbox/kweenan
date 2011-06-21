@@ -1,11 +1,8 @@
 module MerchantsHelper
   def business_hour_class(time, hour)
-    if hour.day == 1
-      'monday ' + time.to_s
-    elsif hour.day != 0
-      time.to_s
-    else
-      ''
-    end
+    classes = []
+    classes << 'monday' if hour.day == 1
+    classes << time.to_s
+    classes.join(' ')
   end
 end

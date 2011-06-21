@@ -5,8 +5,8 @@ class CreateBusinessHours < ActiveRecord::Migration
       t.integer :day, :null => false
       t.integer :start_time
       t.integer :end_time
-      t.integer :break_start_time
-      t.integer :break_end_time
+      t.integer :start_time2
+      t.integer :end_time2
       t.timestamps
     end
   end
