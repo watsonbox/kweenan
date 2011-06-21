@@ -44,6 +44,8 @@ fr:
       title: 'Des Commerçants Proche de Moi'
       no_merchants_found: 'No merchants found'
     show:
+      business_hour: 'From %{start_time} to %{end_time}'
+      business_hour_with_break: 'From %{start_time} to %{end_time} and %{start_time2} to %{end_time2}'
       notices: 'Notices'
       offers: 'Offers'
     new:

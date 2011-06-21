@@ -73,4 +73,22 @@ class BusinessHour < ActiveRecord::Base
   def to_s
     day_name
   end
+  
+  def description
+    if closed?
+      I18n.t('merchants.hours.closed')
+    elsif closed_for_lunch?
+      I18n.t('merchants.show.business_hour_with_break',
+        :start_time => start_time,
+        :end_time => end_time,
+        :start_time2 => start_time2,
+        :end_time2 => end_time2
+      )
+    else
+      I18n.t('merchants.show.business_hour',
+        :start_time => start_time,
+        :end_time => end_time
+      )
+    end
+  end
 end

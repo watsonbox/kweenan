@@ -8,6 +8,13 @@
 %h3= t('attributes.address') + ':'
 %p= @merchant.full_address
 
+%h3= t('attributes.business_hours') + ':'
+%table.show_business_hours
+  - @merchant.business_hours.each do |hour|
+    %tr
+      %th= hour.day_name
+      %td= hour.description
+
 - if @merchant.phone.present?
   %h3= t('attributes.phone') + ':'
   %p= @merchant.phone
